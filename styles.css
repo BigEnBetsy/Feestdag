@@ -1,0 +1,55 @@
+/* Algemene pagina styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #2e3a46;
+    margin-bottom: 20px;
+}
+
+/* Styling voor de feestdag */
+.feestdag {
+    font-size: 28px;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.geen-feestdag {
+    font-size: 24px;
+    color: #FF6347;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .feestdag, .geen-feestdag {
+        font-size: 20px;
+    }
+}
