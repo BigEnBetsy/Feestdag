@@ -1,7 +1,7 @@
 /* Algemene pagina styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fee440;
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,6 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
+    
+    
 }
 
 .container {
@@ -19,7 +22,10 @@ body {
     width: 80%;
     max-width: 600px;
     text-align: center;
+    position: absolute; /* WAS: relative */
+    z-index: 2;
 }
+
 
 h1 {
     font-size: 36px;
@@ -39,6 +45,33 @@ h1 {
     color: #FF6347;
 }
 
+/* Nieuwe styling voor de dynamische datum */
+#datum-container {
+    margin-top: 20px;
+}
+
+.datum {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6347;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animatie voor de datum */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
@@ -49,7 +82,50 @@ h1 {
         font-size: 30px;
     }
 
-    .feestdag, .geen-feestdag {
+    .feestdag, .geen-feestdag, .datum {
         font-size: 20px;
     }
+}
+
+svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.links {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    font-family: sans-serif;
+    z-index: 3;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin-left: 1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a img.icon {
+    display: inline-block;
+    height: 1em;
+    margin: 0 0 -0.1em 0.3em;
+}
+@keyframes dvdBounce {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(100vw, 100vh); }
+}
+
+.moving-container {
+    position: absolute;
+    animation: none; /* Dit zetten we aan met JS */
 }
